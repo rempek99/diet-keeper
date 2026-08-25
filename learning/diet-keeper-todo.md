@@ -21,7 +21,7 @@ meal data; any unofficial Fitatu integration is optional and experimental.
 
 ## Learning path
 
-- [ ] Learn JavaScript and TypeScript fundamentals before starting NestJS.
+- [x] Learn JavaScript and TypeScript fundamentals before starting NestJS.
   - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
   - [Node.js introduction](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
 - [ ] Complete the NestJS "First steps" guide and create a small sample controller.
