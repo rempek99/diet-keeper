@@ -22,7 +22,7 @@ JSON file that specifies the root files and the compiler options required to com
 - undefined
 - object
 
-### Typescript
+### Typescript Types
 
 - any
 - unknown

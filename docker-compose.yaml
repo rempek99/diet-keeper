@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:18-trixie
+    environment:
+      POSTGRES_USER: ciechan
+      POSTGRES_PASSWORD: zimny
+      POSTGRES_DB: zimnydb
+    ports:
+      - '5432:5432'
