@@ -1,9 +1,15 @@
 services:
-  db:
-    image: postgres:18-trixie
+  postgres:
+    image: postgres:18
+    restart: always
     environment:
-      POSTGRES_USER: ciechan
-      POSTGRES_PASSWORD: zimny
-      POSTGRES_DB: zimnydb
+      POSTGRES_USER: nestjs_user
+      POSTGRES_PASSWORD: nestjs_password
+      POSTGRES_DB: nestjs_db
     ports:
       - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
