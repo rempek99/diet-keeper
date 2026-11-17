@@ -1,98 +1,54 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Diet Keeper
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Diet Keeper is a personal nutrition assistant that helps you plan, prepare and track your meals.
 
-## Project setup
+It keeps a shared catalog of **products** with their nutritional values (calories, protein, fat, carbohydrates and more), and a library of **meals** built from those products, including meal ideas contributed by users. Each user has a profile with their own dietary needs and goals.
 
-```bash
-$ npm install
-```
+On top of this data, Diet Keeper gives smart, personalized help:
 
-## Compile and run the project
+- **Meal suggestions:** recommends meals from the shared meal library that fit your nutritional needs.
+- **Natural-language input:** turns free text such as _"two eggs and a slice of rye bread for breakfast"_ into structured meal and nutrition data, so logging food doesn't mean filling in forms.
 
-```bash
-# development
-$ npm run start
+The project has a NestJS REST API backed by PostgreSQL, and a mobile app that connects to an AI agent for conversational meal planning and logging.
 
-# watch mode
-$ npm run start:dev
+## Features
 
-# production mode
-$ npm run start:prod
-```
+Diet Keeper is free to use. Its main goal is to make logging what you eat take seconds, not minutes.
 
-## Run tests
+### Quick meal logging
 
-```bash
-# unit tests
-$ npm run test
+- [ ] Log a meal by typing it in plain words, e.g. _"oatmeal with banana and a coffee with milk"_
+- [ ] Log a meal again in one tap from recent and favourite meals
+- [ ] Meals are assigned to the day and meal type (breakfast, lunch, dinner, snack) automatically, and you can change them
+- [ ] Edit or delete any entry afterwards
 
-# e2e tests
-$ npm run test:e2e
+### Smart interpretation (backend)
 
-# test coverage
-$ npm run test:cov
-```
+- [ ] Turn free text into products, amounts and units
+- [ ] Match products to the product repository and calculate their nutritional values
+- [ ] Use sensible default portions when no amount is given (e.g. "an apple" ≈ 150 g)
+- [ ] Ask for confirmation only when the input is unclear
 
-## Deployment
+### Daily overview
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+- [ ] Daily summary of calories, protein, fat and carbohydrates
+- [ ] History of past days
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Meal suggestions
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+- [ ] Suggest meals from the meal repository that fit what is left of the day's needs
+- [ ] Take the user's goals and preferences into account
+- [ ] Let users add their own meal ideas to the repository
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Repositories
 
-## Resources
+- [ ] Products: nutritional values per 100 g
+- [ ] Meals: recipes built from products, including ideas from users
+- [ ] Users: profile, daily goals and preferences
 
-Check out a few resources that may come in handy when working with NestJS:
+### Optional: Fitatu integration
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- [ ] Export logged meals with their nutritional values, ready to enter in the Fitatu app
+- [ ] Sync meals to Fitatu automatically, only if Fitatu's terms allow it (experimental, off by default)
